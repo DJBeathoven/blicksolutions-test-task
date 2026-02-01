@@ -76,7 +76,7 @@
   {% if has_volume_pricing %}
     {% comment %} Volume pricing display {% endcomment %}
     {% if show_compare_price %}
-      <span role="group">
+      <span role="group" class="group-compare-at-price">
         <span class="visually-hidden">{{ 'content.price_regular' | t }}&nbsp;</span>
         <span class="compare-at-price">{{- compare_at_price -}}</span>
       </span>
@@ -88,7 +88,14 @@
   {% else %}
     {% comment %} Standard pricing display {% endcomment %}
     {% if show_sale_price_first == false and show_compare_price %}
-      <span role="group">
+      <span role="group" class="group-compare-at-price">
+        <span class="visually-hidden">{{ 'content.price_regular' | t }}&nbsp;</span>
+        <span class="compare-at-price">{{- compare_at_price -}}</span>
+      </span>
+    {% endif %}
+
+    {% if show_sale_price_first == true and show_compare_price %}
+      <span role="group" class="group-compare-at-price">
         <span class="visually-hidden">{{ 'content.price_regular' | t }}&nbsp;</span>
         <span class="compare-at-price">{{- compare_at_price -}}</span>
       </span>
@@ -103,12 +110,11 @@
       <span class="price">{{ price | default: '&nbsp;' }}</span>
     {% endif %}
 
-    {% if show_sale_price_first == true and show_compare_price %}
-      <span role="group">
-        <span class="visually-hidden">{{ 'content.price_regular' | t }}&nbsp;</span>
-        <span class="compare-at-price">{{- compare_at_price -}}</span>
+    {%- if selected_variant.taxable -%} 
+      <span class="taxes-included-note">
+        {{ 'content.taxes_included' | t }}
       </span>
-    {% endif %}
+    {%- endif -%}
   {% endif %}
   {%- if selected_variant.unit_price and show_unit_price %}
     {%- liquid

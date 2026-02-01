@@ -4,6 +4,33 @@
 }
 
 /* Product Information Details */
+.group-compare-at-price {
+    margin-right: 20px;
+
+}
+
+.compare-at-price {
+    opacity: 1;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 18px;
+    line-height: 22px;
+    color: #1F47FF;
+    font-weight: 600;
+}
+
+.taxes-included-note {
+    color: #000000;
+    font-size: 10px;
+    line-height: 13px;
+    font-weight: normal;
+}
+
 .product-inventory__icon {
     width: 15px !important;
     height: 15px !important;
