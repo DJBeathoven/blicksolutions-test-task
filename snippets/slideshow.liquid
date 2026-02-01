@@ -90,9 +90,10 @@
   {% if auto_hide_controls %}
     auto-hide-controls
   {% endif %}
-  {% unless infinite == false %}
+  {% comment %} Couldn't find the setting to disable infinite loop {% endcomment %}
+  {% comment %} {% unless infinite == false %}
     infinite
-  {% endunless %}
+  {% endunless %} {% endcomment %}
 
   {{ attributes }}
 >

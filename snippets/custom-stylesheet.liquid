@@ -5,6 +5,7 @@
 
     :root {
         --color-instock: #25A525;
+        --narrow-page-width: 1200px;
     }
 
     /* Product Information Details */
@@ -14,6 +15,7 @@
         border-radius: 5px;
         padding-right: calc(var(--gap, 0) / 2);
         align-self: center !important;
+        max-width: 475px;
     }
 
     .text-block.h3 h1 {
@@ -80,7 +82,7 @@
 
     /* Navigation Dots */
     slideshow-component slideshow-controls[controls-on-media] {
-        position: relative;;
+        position: relative;
     }
     slideshow-component .slideshow-controls__dots button {
         width: 10px;
@@ -111,6 +113,9 @@
     slideshow-arrows .slideshow-control {
         color: var(--color-black);
     }
+    slideshow-arrows .slideshow-control[disabled] {
+        opacity: 0.3;
+    }
     slideshow-arrows .slideshow-control svg {
         width: 24px;;
     }
@@ -123,7 +128,7 @@
         gap: 7px;
     }
 
-    slideshow-slides img {
+    slideshow-slides img, slideshow-slides {
         border-radius: 5px;
     }
 
