@@ -337,5 +337,11 @@
       "success_moderated": "Kommentar gepostet, Moderation ausstehend",
       "success": "Kommentar gepostet"
     }
+  },
+  "delivery_time": {
+    "single_day": "in {{ min }} Tag bei dir",
+    "multiple_days": "in {{ min }}–{{ max }} Tagen bei dir",
+    "only_min": "in {{ min }} Tagen bei dir",
+    "only_max": "in {{ max }} Tagen bei dir"
   }
 }

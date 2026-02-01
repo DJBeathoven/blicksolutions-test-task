@@ -1,0 +1,9 @@
+/* This could be split into multiple files, but for simplicity, we keep it in one. */
+:root {
+    --color-instock: #25A525 !important;
+}
+
+/* Product Information Details */
+.product-inventory__text, .delivery-time {
+    color: var(--color-instock);
+}

@@ -15,14 +15,6 @@
   {% endif %}
 >
   {% capture children %}
-    <div class="view-product-title">
-      <a
-        href="{{ closest.product.selected_or_first_available_variant.url }}"
-        class="link"
-      >
-        {{- closest.product.title }}
-      </a>
-    </div>
     {% content_for 'blocks' %}
   {% endcapture %}
 
@@ -46,6 +38,11 @@
     display: flex;
     align-self: start;
     justify-content: center;
+    box-shadow: 0px 3px 20px #00000029;
+    border: 1px solid #D5D5D5;
+    border-radius: 5px;
+    padding-right: calc(var(--gap, 0) / 2);
+    align-self: center;
   }
 
   @media screen and (min-width: 750px) {
