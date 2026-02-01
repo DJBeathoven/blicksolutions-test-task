@@ -134,6 +134,14 @@
                   },
                   "blocks": {}
                 },
+                "custom_liquid_YDegrf": {
+                  "type": "custom-liquid",
+                  "name": "t:names.custom_liquid",
+                  "settings": {
+                    "custom_liquid": "{% if product.metafields.custom.subtitle != blank %}\n  <div class=\"product-subtitle\">{{ product.metafields.custom.subtitle }}</div>\n{% endif %}"
+                  },
+                  "blocks": {}
+                },
                 "price_tVjtKg": {
                   "type": "price",
                   "settings": {
@@ -172,6 +180,7 @@
               },
               "block_order": [
                 "text_xrnftG",
+                "custom_liquid_YDegrf",
                 "price_tVjtKg",
                 "product_inventory_UzT7pJ"
               ]
