@@ -1,0 +1,93 @@
+{% stylesheet %}
+    /* This could be split into multiple files, but for simplicity, we keep it in one. */
+
+    /* Also note that this Liquid file is only used because the previous custom.css file was overwritten by the theme styles. */
+
+    :root {
+        --color-instock: #25A525;
+    }
+
+    /* Grid Layout */
+    @media screen and (min-width: 1200px) {
+        .product-information__grid.product-information--media-left:not(.product-information__grid--half):not(.product-information--media-none),
+        .product-information__grid.product-information--media-right:not(.product-information__grid--half):not(.product-information--media-none) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+
+    /* Product Information Details */
+    .product-details {
+        box-shadow: 0px 3px 20px #00000029;
+        border: 1px solid #D5D5D5;
+        border-radius: 5px;
+        padding-right: calc(var(--gap, 0) / 2);
+        align-self: center !important;
+    }
+
+    @media screen and (max-width: 750px) {
+        .product-details {
+            padding-left: calc(var(--gap, 0) / 2);
+        }
+    }
+
+    .text-block.h3 h1 {
+        color: var(--color-black);
+        font-size: 25px;
+        line-height: 30px;
+        font-weight: 600;
+    }
+
+    .product-subtitle{
+        color: var(--color-black);
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: normal;
+    }
+
+    .group-compare-at-price {
+        margin-right: 20px;
+    }
+
+    .compare-at-price {
+        opacity: 1;
+        font-size: 18px;
+        line-height: 22px;
+        color: var(--color-black);
+        font-weight: 600;
+    }
+
+    .price {
+        font-size: 18px;
+        line-height: 22px;
+        color: #1F47FF;
+        font-weight: 600;
+    }
+
+    .taxes-included-note {
+        color: var(--color-black);
+        font-size: 10px;
+        line-height: 13px;
+        font-weight: normal;
+    }
+
+
+    .product-inventory__icon {
+        width: 15px;
+        height: 15px;
+    }
+
+    .product-inventory__text, .delivery-time {
+        color: var(--color-instock);
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 19px;
+    }
+
+    .button[id^='BuyButtons-ProductSubmitButton-'] {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 22px;
+    }
+    /* Product Information Details End */
+{% endstylesheet %}
