@@ -4,6 +4,20 @@
 }
 
 /* Product Information Details */
+.product-inventory__icon {
+    width: 15px !important;
+    height: 15px !important;
+}
+
 .product-inventory__text, .delivery-time {
     color: var(--color-instock);
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 19px;
+}
+
+.button[id^='BuyButtons-ProductSubmitButton-'] {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
 }
