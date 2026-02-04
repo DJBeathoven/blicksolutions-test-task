@@ -4,12 +4,15 @@
   {{ closest.product | structured_data }}
 </script>
 
-{% capture media_gallery %}
+{% comment %} {% capture media_gallery %}
   {%- content_for 'block',
     type: '_product-media-gallery',
     id: 'media-gallery',
     closest.product: closest.product
   -%}
+{% endcapture %} {% endcomment %}
+{% capture media_gallery %}
+  {% render 'custom-product-gallery', product: product %}
 {% endcapture %}
 
 {% capture product_details %}
