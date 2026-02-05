@@ -1,0 +1,124 @@
+<div class="section">
+    <div class="section-highlights">
+        {% for highlight in section.blocks %}
+            {% if highlight.type == "highlight" %}
+                <div class="highlight">
+                    {% render 'image',
+                        image: highlight.settings.highlight_icon,
+                    %}
+                    <div class="highlight-content">
+                        <h3>{{ highlight.settings.highlight_title }}</h3>
+                        <p>{{ highlight.settings.highlight_text }}</p>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% stylesheet %}
+    .section-highlights {
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem 0;
+        gap: 8rem;
+    }
+
+    .highlight {
+        display: flex;
+        gap: 16px;
+    }
+
+    .highlight img {
+        width: 57px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .highlight .highlight-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .highlight .highlight-content h3 {
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 600;
+        color: var(--color-black);
+        margin: 0;
+    }
+
+    .highlight .highlight-content p {
+        font-size: 18px;
+        line-height: 22px;
+        color: #383838;
+        margin: 0;
+    }
+
+    @media screen and (max-width: 990px) {
+        .section-highlights {
+            gap: 1rem;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        .section-wrapper.section-highlights {
+            margin-top: 0;
+        }
+        .section-highlights {
+            flex-direction: column;
+            align-items: center;
+            gap: 29px;
+            margin-top: 36px;
+        }
+        .highlight img {
+            width: 48px;
+        }
+        .highlight .highlight-content h3, .highlight .highlight-content p {
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+{% endstylesheet %}
+
+{% schema %}
+{
+    "name": "Hightlights",
+    "tag": "section",
+    "class": "section-wrapper section-highlights",
+    "settings": [],
+    "blocks": [
+        {
+            "type": "highlight",
+            "name": "Highlight",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "highlight_icon",
+                    "label": "Highlight Icon",
+                },
+                {
+                    "type": "text",
+                    "id": "highlight_title",
+                    "label": "Highlight Title",
+                    "default": "100% Qualität"
+                },
+                {
+                    "type": "text",
+                    "id": "highlight_text",
+                    "label": "Highlight Text",
+                    "default": "Dank weichem Silikon"
+                }
+            ]   
+        }
+    ],
+    "max_blocks": 5,
+    "presets": [
+        {
+            "name": "Highlights"
+        }
+    ]
+}
+
+{% endschema %}
