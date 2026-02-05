@@ -19,7 +19,7 @@
 {% stylesheet %}
     .section-highlights {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         margin: 2rem 0;
         gap: 8rem;
     }
@@ -27,7 +27,6 @@
     .highlight {
         display: flex;
         gap: 16px;
-        /* flex-grow: 1; */
     }
 
     .highlight img {
@@ -64,10 +63,14 @@
     }
 
     @media screen and (max-width: 750px) {
+        .section-wrapper.section-highlights {
+            margin-top: 0;
+        }
         .section-highlights {
             flex-direction: column;
             align-items: center;
             gap: 29px;
+            margin-top: 36px;
         }
         .highlight img {
             width: 48px;
